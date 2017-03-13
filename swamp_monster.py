@@ -1,0 +1,52 @@
+# Swamp monster game.
+# version 1.0
+
+from sys import exit
+
+print "-----------------------"
+print "|  Swamp Monster!     |"
+print "|                     |"
+print "|    by JSirikool     |"
+print "-----------------------"
+
+def swamp_monster():
+    print "A giant green swamp monster rises from the waters!"
+    print "It stares at you with big black eyes."
+    print "It raises it's slimey hands and moves towards you..."
+    print "What do you do?"
+    monster_defeated = False
+
+    while True:
+        choice = raw_input ("'jump off boat' or 'attack the monster? '")
+
+        if choice == "jump off boat":
+            dead("The swamp monster catches you and chokes you to death!")
+        elif choice == "attack the monster":
+            print "The monster is surprised you attacked and backs into the swamp."
+            monster_defeated = True
+
+
+
+
+
+
+
+
+def dead(why):
+    print why, "Good job!"
+    exit(1)
+
+def start():
+    print """You're in the deep South. \nYou're on a row boat in the sawmp. \
+    \nIt's foggy. You hear a splash and seomthing is moving towards you. \
+    \nWhat do you do you? \npaddle away, ask questions later. \
+    \nWait, see what it is."""
+
+    choice = raw_input("> ")
+
+    if choice == "paddle away":
+        swamp_monster()
+    else:
+        dead("You did nothing!")
+
+start()
